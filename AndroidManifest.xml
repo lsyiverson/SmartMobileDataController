@@ -3,6 +3,8 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="15" />
@@ -13,8 +15,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".SwitchActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/title_activity_switch" >
+            android:label="@string/title_activity_switch"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
