@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">SmartMobileDataController</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_switch">SwitchActivity</string>
+    <string name="start">Start smart mobile data controller</string>
+    <string name="off">off</string>
+    <string name="on">on</string>
+
+</resources>
