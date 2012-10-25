@@ -40,13 +40,18 @@ public class Utils {
     public static void setMobileDataEnabled(boolean enabled, Context context) {
         ConnectivityManager cm = (ConnectivityManager)context
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
-        if (enabled) {
-            if (!getMobileDataEnabled(cm)) {
-                // TODO: set status enabled
-            }
-        } else {
-            if (getMobileDataEnabled(cm)) {
-                // TODO: set status disabled
+        if (enabled != getMobileDataEnabled(cm)) {
+            try {
+                Method method = cm.getClass().getMethod("setMobileDataEnabled", boolean.class);
+                method.invoke(cm, enabled);
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
             }
         }
     }
