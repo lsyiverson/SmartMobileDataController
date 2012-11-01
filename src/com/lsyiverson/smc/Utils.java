@@ -5,9 +5,15 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.util.Log;
 
 public class Utils {
+    private static final String LOG_TAG = "Utils";
+
+    public static final String MOBILE_DATA_CHANGED = "com.lsyiverson.smc.MOBILE_DATA_CHANGED";
+
     /**
      * Get the mobile data status
      * 
@@ -44,6 +50,11 @@ public class Utils {
             try {
                 Method method = cm.getClass().getMethod("setMobileDataEnabled", boolean.class);
                 method.invoke(cm, enabled);
+                if (enabled) {
+                    Log.d(LOG_TAG, "Mobile Data turn on");
+                } else {
+                    Log.d(LOG_TAG, "Mobile Data turn off");
+                }
             } catch (NoSuchMethodException e) {
                 e.printStackTrace();
             } catch (IllegalArgumentException e) {
@@ -54,5 +65,8 @@ public class Utils {
                 e.printStackTrace();
             }
         }
+        Intent intent = new Intent(MOBILE_DATA_CHANGED);
+        intent.putExtra("enabled", enabled);
+        context.sendBroadcast(intent);
     }
 }
