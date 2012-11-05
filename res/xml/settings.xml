@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/smart_mobile_data_switch" >
+        <SwitchPreference
+            android:key="@string/mobile_data"
+            android:summaryOff="@string/sum_off"
+            android:summaryOn="@string/sum_on"
+            android:switchTextOff="@string/off"
+            android:switchTextOn="@string/on"
+            android:title="@string/switch_title" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

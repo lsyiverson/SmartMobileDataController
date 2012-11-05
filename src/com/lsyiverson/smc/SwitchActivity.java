@@ -3,47 +3,43 @@ package com.lsyiverson.smc;
 
 import java.util.ArrayList;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
-import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Switch;
 
-public class SwitchActivity extends Activity {
+public class SwitchActivity extends PreferenceActivity {
     private static final String LOG_TAG = "SwitchActivity";
 
     private Intent mFluxCtrlIntent;
 
     private Switch mStartSwitch;
 
+    private SharedPreferences mSmartSettings;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_switch);
-        setupView();
+        addPreferencesFromResource(R.xml.settings);
+        mSmartSettings = PreferenceManager.getDefaultSharedPreferences(this);
         mFluxCtrlIntent = new Intent(SwitchActivity.this, FluxCtrlService.class);
+        init();
     }
 
     @Override
     protected void onResume() {
-        mStartSwitch.setChecked(isServiceRuning(mFluxCtrlIntent.getComponent().getClassName()));
-        mStartSwitch.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    Log.d(LOG_TAG, "switch turn on");
-                    startService(mFluxCtrlIntent);
-                } else {
-                    Log.d(LOG_TAG, "switch turn off");
-                    stopService(mFluxCtrlIntent);
-                }
-            }
-        });
+        boolean fluxCtrl = mSmartSettings.getBoolean(
+                getResources().getString(R.string.mobile_data), false);
+        if (fluxCtrl != isServiceRuning(mFluxCtrlIntent.getComponent().getClassName())) {
+            ctrlServiceByPreference(fluxCtrl);
+        }
         super.onResume();
     }
 
@@ -53,8 +49,21 @@ public class SwitchActivity extends Activity {
         return true;
     }
 
-    private void setupView() {
-        mStartSwitch = (Switch)findViewById(R.id.start_switch);
+    private void init() {
+        mSmartSettings
+                .registerOnSharedPreferenceChangeListener(new OnSharedPreferenceChangeListener() {
+
+                    @Override
+                    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+                            String key) {
+                        boolean fluxCtrl;
+                        if (getResources().getString(R.string.mobile_data).equals(key)) {
+                            fluxCtrl = sharedPreferences.getBoolean(key, false);
+                            ctrlServiceByPreference(fluxCtrl);
+                        }
+
+                    }
+                });
     }
 
     private boolean isServiceRuning(String classname) {
@@ -69,5 +78,15 @@ public class SwitchActivity extends Activity {
         }
         Log.d(LOG_TAG, "Service is not running");
         return false;
+    }
+
+    private void ctrlServiceByPreference(boolean fluxCtrl) {
+        if (fluxCtrl) {
+            Log.d(LOG_TAG, "switch turn on");
+            startService(mFluxCtrlIntent);
+        } else {
+            Log.d(LOG_TAG, "switch turn off");
+            stopService(mFluxCtrlIntent);
+        }
     }
 }
