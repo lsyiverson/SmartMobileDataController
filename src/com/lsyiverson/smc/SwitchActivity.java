@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
+import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.Menu;
@@ -24,6 +27,12 @@ public class SwitchActivity extends PreferenceActivity {
 
     private SharedPreferences mSmartSettings;
 
+    private PreferenceCategory mOptionsCategory;
+
+    private CheckBoxPreference mAutoRunPref;
+
+    private ListPreference mDelayTimePref;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +45,11 @@ public class SwitchActivity extends PreferenceActivity {
     @Override
     protected void onResume() {
         boolean fluxCtrl = mSmartSettings.getBoolean(
-                getResources().getString(R.string.mobile_data), false);
+                getResources().getString(R.string.key_mobile_data), false);
         if (fluxCtrl != isServiceRuning(mFluxCtrlIntent.getComponent().getClassName())) {
             ctrlServiceByPreference(fluxCtrl);
+        } else {
+            setPreferenceState(fluxCtrl);
         }
         super.onResume();
     }
@@ -57,13 +68,19 @@ public class SwitchActivity extends PreferenceActivity {
                     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
                             String key) {
                         boolean fluxCtrl;
-                        if (getResources().getString(R.string.mobile_data).equals(key)) {
+                        if (getResources().getString(R.string.key_mobile_data).equals(key)) {
                             fluxCtrl = sharedPreferences.getBoolean(key, false);
                             ctrlServiceByPreference(fluxCtrl);
                         }
 
                     }
                 });
+        mOptionsCategory = (PreferenceCategory)getPreferenceScreen().findPreference(
+                getResources().getString(R.string.key_options));
+        mAutoRunPref = (CheckBoxPreference)getPreferenceScreen().findPreference(
+                getResources().getString(R.string.key_auto_run));
+        mDelayTimePref = (ListPreference)getPreferenceScreen().findPreference(
+                getResources().getString(R.string.key_delay_time));
     }
 
     private boolean isServiceRuning(String classname) {
@@ -80,7 +97,14 @@ public class SwitchActivity extends PreferenceActivity {
         return false;
     }
 
+    private void setPreferenceState(boolean enabled) {
+        mOptionsCategory.setEnabled(enabled);
+        mAutoRunPref.setSelectable(enabled);
+        mDelayTimePref.setSelectable(enabled);
+    }
+
     private void ctrlServiceByPreference(boolean fluxCtrl) {
+        setPreferenceState(fluxCtrl);
         if (fluxCtrl) {
             Log.d(LOG_TAG, "switch turn on");
             startService(mFluxCtrlIntent);

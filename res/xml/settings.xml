@@ -3,12 +3,31 @@
 
     <PreferenceCategory android:title="@string/smart_mobile_data_switch" >
         <SwitchPreference
-            android:key="@string/mobile_data"
+            android:key="@string/key_mobile_data"
             android:summaryOff="@string/sum_off"
             android:summaryOn="@string/sum_on"
             android:switchTextOff="@string/off"
             android:switchTextOn="@string/on"
             android:title="@string/switch_title" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:enabled="false"
+        android:key="@string/key_options"
+        android:title="@string/options" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/key_auto_run"
+            android:summary="@string/sum_autorun"
+            android:title="@string/auto_run_title" />
+
+        <ListPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/delay_time_title"
+            android:entries="@array/delay_time_list_preference"
+            android:entryValues="@array/value_list_preference"
+            android:key="@string/key_delay_time"
+            android:summary="@string/sum_delay"
+            android:title="@string/delay_time_title" />
     </PreferenceCategory>
 
 </PreferenceScreen>
