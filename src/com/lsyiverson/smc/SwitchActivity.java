@@ -18,7 +18,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Switch;
 
-public class SwitchActivity extends PreferenceActivity {
+public class SwitchActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
     private static final String LOG_TAG = "SwitchActivity";
 
     private Intent mFluxCtrlIntent;
@@ -61,20 +61,7 @@ public class SwitchActivity extends PreferenceActivity {
     }
 
     private void init() {
-        mSmartSettings
-                .registerOnSharedPreferenceChangeListener(new OnSharedPreferenceChangeListener() {
-
-                    @Override
-                    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
-                            String key) {
-                        boolean fluxCtrl;
-                        if (getResources().getString(R.string.key_mobile_data).equals(key)) {
-                            fluxCtrl = sharedPreferences.getBoolean(key, false);
-                            ctrlServiceByPreference(fluxCtrl);
-                        }
-
-                    }
-                });
+        mSmartSettings.registerOnSharedPreferenceChangeListener(this);
         mOptionsCategory = (PreferenceCategory)getPreferenceScreen().findPreference(
                 getResources().getString(R.string.key_options));
         mAutoRunPref = (CheckBoxPreference)getPreferenceScreen().findPreference(
@@ -111,6 +98,15 @@ public class SwitchActivity extends PreferenceActivity {
         } else {
             Log.d(LOG_TAG, "switch turn off");
             stopService(mFluxCtrlIntent);
+        }
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+        boolean fluxCtrl;
+        if (getResources().getString(R.string.key_mobile_data).equals(key)) {
+            fluxCtrl = sharedPreferences.getBoolean(key, false);
+            ctrlServiceByPreference(fluxCtrl);
         }
     }
 }

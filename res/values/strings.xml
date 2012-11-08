@@ -28,6 +28,6 @@
     
     <!-- Delay time preference string -->
     <string name="delay_time_title">Delay Time</string>
-    <string name="sum_delay">Select the time delaing</string>
+    <string name="sum_delay">Select the time delaing before turning off mobile data</string>
 
 </resources>
