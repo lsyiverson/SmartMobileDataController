@@ -103,7 +103,6 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        Log.d("debug", "key="+key);
         boolean fluxCtrl;
         if (getResources().getString(R.string.key_mobile_data).equals(key)) {
             fluxCtrl = sharedPreferences.getBoolean(key, false);

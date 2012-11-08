@@ -3,7 +3,7 @@
 
     <string-array name="delay_time_list_preference">
         <item>No delay</item>
-        <item>3 second</item>
+        <item>3 seconds</item>
         <item>5 seconds</item>
         <item>10 seconds</item>
     </string-array>
