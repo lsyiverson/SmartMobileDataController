@@ -6,7 +6,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.AsyncTask;
+import android.os.AsyncTask.Status;
 import android.os.IBinder;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 public class FluxCtrlService extends Service {
@@ -17,6 +20,8 @@ public class FluxCtrlService extends Service {
     private IntentFilter mFilter;
 
     private Context mContext;
+
+    private DelayDisableFluxTask mTask;
 
     @Override
     public void onCreate() {
@@ -59,15 +64,47 @@ public class FluxCtrlService extends Service {
             if (Intent.ACTION_SCREEN_ON.equals(intent.getAction())) {
                 mIsScreenOn = true;
                 Log.d(LOG_TAG, "Screen ON");
+                if (mTask != null && mTask.getStatus() == Status.RUNNING) {
+                    mTask.cancel(true);
+                    mTask = null;
+                }
                 Utils.setMobileDataEnabled(true, mContext);
             } else if (Intent.ACTION_SCREEN_OFF.equals(intent.getAction())) {
                 mIsScreenOn = false;
                 Log.d(LOG_TAG, "Screen OFF");
-                Utils.setMobileDataEnabled(false, mContext);
+                String delayTime = PreferenceManager.getDefaultSharedPreferences(FluxCtrlService.this)
+                        .getString(getResources().getString(R.string.key_delay_time), "0");
+                mTask = new DelayDisableFluxTask();
+                mTask.execute(Integer.valueOf(delayTime).intValue());
             }
 
         }
 
     };
+
+    private class DelayDisableFluxTask extends AsyncTask<Integer, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Integer... params) {
+            int time = params[0].intValue() * 1000;
+            if (time > 0) {
+                try {
+                    Thread.sleep(time);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            if (!mIsScreenOn) {
+                Utils.setMobileDataEnabled(false, mContext);
+            }
+            super.onPostExecute(result);
+        }
+
+    }
 
 }
