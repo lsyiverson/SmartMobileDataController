@@ -29,5 +29,13 @@
             android:summary="@string/sum_delay"
             android:title="@string/delay_time_title" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/about" >
+        <Preference android:title="@string/about_app_title" >
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.lsyiverson.smc.AboutActivity"
+                android:targetPackage="com.lsyiverson.smc" />
+        </Preference>
+    </PreferenceCategory>
 
 </PreferenceScreen>
