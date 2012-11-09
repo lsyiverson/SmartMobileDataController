@@ -15,15 +15,11 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.Menu;
-import android.widget.Switch;
 
 public class SwitchActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
     private static final String LOG_TAG = "SwitchActivity";
 
     private Intent mFluxCtrlIntent;
-
-    private Switch mStartSwitch;
 
     private SharedPreferences mSmartSettings;
 
@@ -52,12 +48,6 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
             setPreferenceState(fluxCtrl);
         }
         super.onResume();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_switch, menu);
-        return true;
     }
 
     private void init() {
