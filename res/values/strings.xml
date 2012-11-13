@@ -5,34 +5,36 @@
     <string name="title_activity_switch">Smart Mobile Data Controller</string>
     <string name="title_activity_about">About</string>
     <string name="start">Start smart mobile data controller</string>
-    
+
     <!-- Preference Category -->
     <string name="smart_mobile_data_switch">Switch</string>
     <string name="options">Options</string>
     <string name="about">About</string>
-    
+
     <!-- Preference keys -->
     <string name="key_mobile_data">mobile_data</string>
     <string name="key_options"></string>
     <string name="key_auto_run">auto_run</string>
     <string name="key_delay_time">delay_time</string>
-    
+
     <!-- Switch preference string -->
     <string name="switch_title">Mobile Data</string>
     <string name="sum_on">Click to turn off Smart Controller</string>
     <string name="sum_off">Click to turn on Smart Controller</string>
     <string name="off">OFF</string>
     <string name="on">ON</string>
-    
+
     <!-- Auto Run preference string -->
     <string name="auto_run_title">Auto Run</string>
     <string name="sum_autorun">Start service when system boot</string>
-    
+
     <!-- Delay time preference string -->
     <string name="delay_time_title">Delay Time</string>
     <string name="sum_delay">Select the time delaing before turning off mobile data</string>
-    
+
     <!-- About preference string -->
     <string name="about_app_title">About the App</string>
+    <string name="app_version">Version: %1$s</string>
+    <string name="app_description">Smart Mobile Data Controller is an app used for control the mobile data automatically when the screen on and off. It can help you to save battery and not affect you for access the network. This is the first version of the app, I will try to add more smart function in the next versions.&lt;br/>&lt;br/>The app is open source and free for using, so it contains an AD banner. If you don\'t want to see the AD banner or you want to see the source code, you can access https://github.com/lsyiverson/SmartMobileDataController to get the source code and modify it by yourself.&lt;br/>&lt;br/>Thank you for using this app!&lt;br/></string>
 
 </resources>
