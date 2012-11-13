@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.MenuItem;
 import android.widget.TextView;
+import cn.domob.android.ads.DomobUpdater;
 
 public class AboutActivity extends Activity {
 
@@ -43,6 +44,10 @@ public class AboutActivity extends Activity {
 
         TextView tvDescription = (TextView)findViewById(R.id.description);
         tvDescription.setText(Html.fromHtml(getResources().getString(R.string.app_description)));
+
+        // Use Domob SDK to check update
+        DomobUpdater.checkUpdate(AboutActivity.this, getResources()
+                .getString(R.string.publisher_id));
     }
 
     @Override

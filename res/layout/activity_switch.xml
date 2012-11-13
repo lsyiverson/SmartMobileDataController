@@ -1,17 +1,22 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <Switch
-        android:id="@+id/start_switch"
+    <ListView
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:switchPadding="20sp"
-        android:thumbTextPadding="20sp"
-        android:textOn="@string/on"
-        android:textOff="@string/off"
-        android:text="@string/start" />
+        android:layout_alignParentTop="true" >
+    </ListView>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/ad_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

@@ -15,6 +15,9 @@ import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.RelativeLayout;
+import cn.domob.android.ads.DomobAdEventListener;
+import cn.domob.android.ads.DomobAdView;
 
 public class SwitchActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
     private static final String LOG_TAG = "SwitchActivity";
@@ -29,13 +32,19 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
 
     private ListPreference mDelayTimePref;
 
+    private RelativeLayout mAdContainer;
+
+    private DomobAdView mAdView320x50;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.settings);
+        setContentView(R.layout.activity_switch);
         mSmartSettings = PreferenceManager.getDefaultSharedPreferences(this);
         mFluxCtrlIntent = new Intent(SwitchActivity.this, FluxCtrlService.class);
         init();
+        setupAdView();
     }
 
     @Override
@@ -48,6 +57,37 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
             setPreferenceState(fluxCtrl);
         }
         super.onResume();
+    }
+
+    private void setupAdView() {
+        mAdContainer = (RelativeLayout)findViewById(R.id.ad_container);
+
+        mAdView320x50 = new DomobAdView(this, getResources().getString(R.string.publisher_id),
+                DomobAdView.INLINE_SIZE_320X50);
+        mAdView320x50.setAdEventListener(new DomobAdEventListener() {
+
+            @Override
+            public void onDomobAdReturned(DomobAdView arg0) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onDomobAdOverlayPresented(DomobAdView arg0) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onDomobAdOverlayDismissed(DomobAdView arg0) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onDomobAdFailed(DomobAdView arg0) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        mAdContainer.addView(mAdView320x50);
     }
 
     private void init() {
