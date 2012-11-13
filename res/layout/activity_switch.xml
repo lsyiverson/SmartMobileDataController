@@ -5,12 +5,12 @@
     android:orientation="vertical" >
 
     <ListView
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
         android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" >
     </ListView>
 
     <RelativeLayout
