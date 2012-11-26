@@ -10,9 +10,10 @@
 
     <!-- Preference keys -->
     <string name="key_mobile_data">mobile_data</string>
-    <string name="key_options"></string>
+    <string name="key_options">options</string>
     <string name="key_auto_run">auto_run</string>
     <string name="key_delay_time">delay_time</string>
+    <string name="key_showtips">showtips</string>
 
     <!-- Switch preference string -->
     <string name="switch_title">Mobile Data</string>
@@ -34,7 +35,14 @@
     <string name="app_version">Version: %1$s</string>
     <string name="app_description">Smart Mobile Data Controller is an app used for control the mobile data automatically when the screen on and off. It can help you to save battery and not affect you for access the network. This is the first version of the app, I will try to add more smart function in the next versions.&lt;br/>&lt;br/>The app is open source and free for using, so it contains an AD banner. If you don\'t want to see the AD banner or you want to see the source code, you can access https://github.com/lsyiverson/SmartMobileDataController to get the source code and modify it by yourself.&lt;br/>&lt;br/>Thank you for using this app!</string>
 
+    <!-- Show again tips dialog string -->
+    <string name="tips_title">Notice</string>
+    <string name="tips_content">Turn on Smart Mobile Data Controller will lead other mobile data switch invalid, the mobile data will be automatically controlling by this app. Do you want to continue?</string>
+    <string name="tips_show_again">Do not show again</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+
     <!-- Domob Ad string -->
-    <string name="publisher_id">56OJyM1ouMGoaSnvCK</string>
+    <string name="publisher_id">56OJzuCIuNcnno4QRL</string>
 
 </resources>
