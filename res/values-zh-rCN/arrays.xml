@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="delay_time_list_preference">
+        <item>没有延时</item>
+        <item>3秒</item>
+        <item>5秒</item>
+        <item>10秒</item>
+    </string-array>
+
+</resources>
