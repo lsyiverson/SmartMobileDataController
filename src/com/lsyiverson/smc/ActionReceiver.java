@@ -23,7 +23,7 @@ public class ActionReceiver extends BroadcastReceiver {
                 context.startService(new Intent(context, FluxCtrlService.class));
             }
         } else if (intent.getAction().equals(Intent.ACTION_PACKAGE_REPLACED)) {
-            String pkgName = intent.getDataString().substring(8);
+            String pkgName = intent.getData().getSchemeSpecificPart();
             if (pkgName.equals(context.getPackageName())
                     && sp.getBoolean(res.getString(R.string.key_mobile_data), false)) {
                 Log.d(LOG_TAG, "App has replaced, restart FluxCtrlService");
