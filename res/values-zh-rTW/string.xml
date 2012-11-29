@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">智慧移動資料控制</string>
+    <string name="title_activity_about">關於</string>
+
+    <!-- Preference Category -->
+    <string name="smart_mobile_data_switch">開關</string>
+    <string name="options">選項</string>
+    <string name="about">關於</string>
+
+    <!-- Switch preference string -->
+    <string name="switch_title">移動資料</string>
+    <string name="sum_on">點擊關閉智慧控制</string>
+    <string name="sum_off">點擊打開智慧控制</string>
+    <string name="off">關閉</string>
+    <string name="on">開啟</string>
+
+    <!-- Auto Run preference string -->
+    <string name="auto_run_title">自動運行</string>
+    <string name="sum_autorun">系統啟動時開啟服務</string>
+
+    <!-- Delay time preference string -->
+    <string name="delay_time_title">延時</string>
+    <string name="sum_delay">選擇關閉移動資料前的延時長短</string>
+
+    <!-- About preference string -->
+    <string name="about_app_title">關於應用</string>
+    <string name="app_version">版本: %1$s</string>
+    <string name="app_description">智慧移動資料控制是一個用於在螢幕開關時自動控制移動資料的應用。它能夠幫助你節省電量並且不影響你訪問網路。這是該應用的最初版本，我會在下一版本了加入更多的智慧功能。&lt;br/>&lt;br/>該應用是開源並且免費使用的，所以它包含一個廣告條。如果你不想看見廣告條或者想看看原始程式碼，你可以訪問https://github.com/lsyiverson/SmartMobileDataController 來得到原始程式碼並自己修改它。&lt;br/>&lt;br/>感謝你使用該應用！</string>
+
+    <!-- Show again tips dialog string -->
+    <string name="tips_title">注意</string>
+    <string name="tips_content">打開只能移動資料控制會導致其他移動資料開關失效，移動資料會由該應用自動控制。你要繼續嗎？</string>
+    <string name="tips_show_again">不再顯示</string>
+    <string name="ok">確定</string>
+    <string name="cancel">取消</string>
+
+</resources>
