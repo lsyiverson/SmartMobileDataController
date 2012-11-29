@@ -41,12 +41,14 @@ public class FluxCtrlService extends Service {
 
     @Override
     public void onDestroy() {
+        Log.d(LOG_TAG, "Stop FluxCtrlService");
         unregisterReceiver(mScreenStateReceiver);
         super.onDestroy();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+        Log.d(LOG_TAG, "Start FluxCtrlService");
         registerReceiver(mScreenStateReceiver, mFilter);
         return super.onStartCommand(intent, flags, startId);
     }
@@ -72,8 +74,9 @@ public class FluxCtrlService extends Service {
             } else if (Intent.ACTION_SCREEN_OFF.equals(intent.getAction())) {
                 mIsScreenOn = false;
                 Log.d(LOG_TAG, "Screen OFF");
-                String delayTime = PreferenceManager.getDefaultSharedPreferences(FluxCtrlService.this)
-                        .getString(getResources().getString(R.string.key_delay_time), "0");
+                String delayTime = PreferenceManager.getDefaultSharedPreferences(
+                        FluxCtrlService.this).getString(
+                        getResources().getString(R.string.key_delay_time), "0");
                 mTask = new DelayDisableFluxTask();
                 mTask.execute(Integer.valueOf(delayTime).intValue());
             }

@@ -1,0 +1,38 @@
+<resources>
+
+    <string name="app_name">智能移动数据控制</string>
+    <string name="title_activity_about">关于</string>
+
+    <!-- Preference Category -->
+    <string name="smart_mobile_data_switch">开关</string>
+    <string name="options">选项</string>
+    <string name="about">关于</string>
+
+    <!-- Switch preference string -->
+    <string name="switch_title">移动数据</string>
+    <string name="sum_on">点击关闭智能控制</string>
+    <string name="sum_off">点击打开智能控制</string>
+    <string name="off">关闭</string>
+    <string name="on">打开</string>
+
+    <!-- Auto Run preference string -->
+    <string name="auto_run_title">自动运行</string>
+    <string name="sum_autorun">系统启动时开启服务</string>
+
+    <!-- Delay time preference string -->
+    <string name="delay_time_title">延时</string>
+    <string name="sum_delay">选择关闭移动数据前的延时长短</string>
+
+    <!-- About preference string -->
+    <string name="about_app_title">关于应用</string>
+    <string name="app_version">版本: %1$s</string>
+    <string name="app_description">智能移动数据控制是一个用于在屏幕开关时自动控制移动数据的应用。它能够帮助你节省电量并且不影响你访问网络。这是该应用的最初版本，我会在下一版本了加入更多的智能功能。&lt;br/>&lt;br/>该应用是开源并且免费使用的，所以它包含一个广告条。如果你不想看见广告条或者想看看源代码，你可以访问https://github.com/lsyiverson/SmartMobileDataController 来得到源代码并自己修改它。&lt;br/>&lt;br/>感谢你使用该应用！</string>
+
+    <!-- Show again tips dialog string -->
+    <string name="tips_title">注意</string>
+    <string name="tips_content">打开只能移动数据控制会导致其他移动数据开关失效，移动数据会由该应用自动控制。你要继续吗？</string>
+    <string name="tips_show_again">不再显示</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+
+</resources>
