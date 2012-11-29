@@ -54,6 +54,7 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
         setContentView(R.layout.activity_switch);
         mSmartSettings = PreferenceManager.getDefaultSharedPreferences(this);
         mFluxCtrlIntent = new Intent(SwitchActivity.this, FluxCtrlService.class);
+        mFluxCtrlIntent.addFlags(Utils.MANUAL_FLAG);
         init();
         setupAdView();
     }
@@ -164,30 +165,30 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
 
                 Builder builder = new AlertDialog.Builder(SwitchActivity.this);
                 builder.setTitle(R.string.tips_title).setView(tipsView)
-                        .setPositiveButton(R.string.ok, new OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                if (cbShowAgain.isChecked()) {
-                                    PreferenceManager
-                                            .getDefaultSharedPreferences(SwitchActivity.this)
-                                            .edit()
-                                            .putBoolean(
-                                                    getResources().getString(R.string.key_showtips),
-                                                    false).commit();
-                                }
-                                ctrlServiceByPreference(fluxCtrl);
-                            }
-                        }).setNegativeButton(R.string.cancel, new OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                mSwitchPreference.setChecked(false);
-                            }
-                        }).setOnCancelListener(new OnCancelListener() {
-                            @Override
-                            public void onCancel(DialogInterface arg0) {
-                                mSwitchPreference.setChecked(false);
-                            }
-                        });
+                .setPositiveButton(R.string.ok, new OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (cbShowAgain.isChecked()) {
+                            PreferenceManager
+                            .getDefaultSharedPreferences(SwitchActivity.this)
+                            .edit()
+                            .putBoolean(
+                                    getResources().getString(R.string.key_showtips),
+                                    false).commit();
+                        }
+                        ctrlServiceByPreference(fluxCtrl);
+                    }
+                }).setNegativeButton(R.string.cancel, new OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        mSwitchPreference.setChecked(false);
+                    }
+                }).setOnCancelListener(new OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface arg0) {
+                        mSwitchPreference.setChecked(false);
+                    }
+                });
                 if (!SwitchActivity.this.isFinishing()) {
                     builder.create().show();
                 } else {

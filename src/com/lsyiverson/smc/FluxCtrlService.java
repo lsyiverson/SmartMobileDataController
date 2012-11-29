@@ -50,6 +50,13 @@ public class FluxCtrlService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(LOG_TAG, "Start FluxCtrlService");
         registerReceiver(mScreenStateReceiver, mFilter);
+        switch (intent.getFlags()){
+            case Utils.MANUAL_FLAG:
+                Utils.setMobileDataEnabled(true, mContext);
+                break;
+            case Utils.AUTOMATIC_FLAG:
+                break;
+        }
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -76,7 +83,7 @@ public class FluxCtrlService extends Service {
                 Log.d(LOG_TAG, "Screen OFF");
                 String delayTime = PreferenceManager.getDefaultSharedPreferences(
                         FluxCtrlService.this).getString(
-                        getResources().getString(R.string.key_delay_time), "0");
+                                getResources().getString(R.string.key_delay_time), "0");
                 mTask = new DelayDisableFluxTask();
                 mTask.execute(Integer.valueOf(delayTime).intValue());
             }

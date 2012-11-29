@@ -12,6 +12,10 @@ import android.util.Log;
 public class Utils {
     private static final String LOG_TAG = "Utils";
 
+    public static final int MANUAL_FLAG = 0x01;
+
+    public static final int AUTOMATIC_FLAG = 0x02;
+
     public static final String MOBILE_DATA_CHANGED = "com.lsyiverson.smc.MOBILE_DATA_CHANGED";
 
     /**
