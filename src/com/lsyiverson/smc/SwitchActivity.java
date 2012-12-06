@@ -26,6 +26,7 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
 import cn.domob.android.ads.DomobAdEventListener;
+import cn.domob.android.ads.DomobAdManager.ErrorCode;
 import cn.domob.android.ads.DomobAdView;
 
 public class SwitchActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
@@ -94,8 +95,21 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
             }
 
             @Override
-            public void onDomobAdFailed(DomobAdView arg0) {
+            public void onDomobAdClicked(DomobAdView arg0) {
                 // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onDomobAdFailed(DomobAdView arg0, ErrorCode arg1) {
+                // TODO Auto-generated method stub
+
+            }
+
+            @Override
+            public void onDomobLeaveApplication(DomobAdView arg0) {
+                // TODO Auto-generated method stub
+
             }
         });
 
