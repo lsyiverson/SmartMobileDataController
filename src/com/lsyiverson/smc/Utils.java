@@ -19,6 +19,31 @@ public class Utils {
     public static final String MOBILE_DATA_CHANGED = "com.lsyiverson.smc.MOBILE_DATA_CHANGED";
 
     /**
+     * Umeng analytics event: turn switch on
+     */
+    public static final String UMENG_SWITCH_ON = "SWITCH_ON";
+
+    /**
+     * Umeng analytics event: turn switch off
+     */
+    public static final String UMENG_SWITCH_OFF = "SWITCH_OFF";
+
+    /**
+     * Umeng analytics event: turn mobile data delay time before screen off
+     */
+    public static final String UMENG_DELAY_TIME = "DELAY_TIME";
+
+    /**
+     * Umeng analytics event: auto run service when system boot completed
+     */
+    public static final String UMENG_AUTO_RUN = "AUTO_RUN";
+
+    /**
+     * Umeng analystic event: ad clicked
+     */
+    public static final String UMENG_AD_CLICKED = "AD_CLICKED";
+
+    /**
      * Get the mobile data status
      * 
      * @param context

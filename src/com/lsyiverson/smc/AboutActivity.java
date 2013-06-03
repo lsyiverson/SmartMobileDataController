@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import cn.domob.android.ads.DomobUpdater;
 
+import com.umeng.analytics.MobclickAgent;
+
 public class AboutActivity extends Activity {
 
     @Override
@@ -62,6 +64,18 @@ public class AboutActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
     }
 
 }

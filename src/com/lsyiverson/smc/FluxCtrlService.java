@@ -12,6 +12,8 @@ import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.umeng.analytics.MobclickAgent;
+
 public class FluxCtrlService extends Service {
     private static final String LOG_TAG = "FluxCtrlService";
 
@@ -85,7 +87,8 @@ public class FluxCtrlService extends Service {
                 Log.d(LOG_TAG, "Screen OFF");
                 String delayTime = PreferenceManager.getDefaultSharedPreferences(
                         FluxCtrlService.this).getString(
-                        getResources().getString(R.string.key_delay_time), "0");
+                                getResources().getString(R.string.key_delay_time), "0");
+                MobclickAgent.onEvent(FluxCtrlService.this, Utils.UMENG_DELAY_TIME, delayTime);
                 mTask = new DelayDisableFluxTask();
                 mTask.execute(Integer.valueOf(delayTime).intValue());
             }

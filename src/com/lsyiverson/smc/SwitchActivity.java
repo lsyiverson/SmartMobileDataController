@@ -7,6 +7,7 @@ import android.app.ActivityManager;
 import android.app.ActivityManager.RunningServiceInfo;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
@@ -28,6 +29,8 @@ import android.widget.RelativeLayout;
 import cn.domob.android.ads.DomobAdEventListener;
 import cn.domob.android.ads.DomobAdManager.ErrorCode;
 import cn.domob.android.ads.DomobAdView;
+
+import com.umeng.analytics.MobclickAgent;
 
 public class SwitchActivity extends PreferenceActivity implements OnSharedPreferenceChangeListener {
     private static final String LOG_TAG = "SwitchActivity";
@@ -51,6 +54,7 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MobclickAgent.onError(this);
         addPreferencesFromResource(R.xml.settings);
         setContentView(R.layout.activity_switch);
         mSmartSettings = PreferenceManager.getDefaultSharedPreferences(this);
@@ -70,12 +74,13 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
             setPreferenceState(fluxCtrl);
         }
         super.onResume();
+        MobclickAgent.onResume(this);
     }
 
     private void setupAdView() {
         mAdContainer = (RelativeLayout)findViewById(R.id.ad_container);
 
-        mAdView320x50 = new DomobAdView(this, getResources().getString(R.string.publisher_id),
+        mAdView320x50 = new DomobAdView(this, getResources().getString(R.string.publisher_id), getResources().getString(R.string.InlinePPID),
                 DomobAdView.INLINE_SIZE_320X50);
         mAdView320x50.setAdEventListener(new DomobAdEventListener() {
 
@@ -96,8 +101,7 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
 
             @Override
             public void onDomobAdClicked(DomobAdView arg0) {
-                // TODO Auto-generated method stub
-
+                MobclickAgent.onEvent(SwitchActivity.this, Utils.UMENG_AD_CLICKED);
             }
 
             @Override
@@ -110,6 +114,12 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
             public void onDomobLeaveApplication(DomobAdView arg0) {
                 // TODO Auto-generated method stub
 
+            }
+
+            @Override
+            public Context onDomobAdRequiresCurrentContext() {
+                // TODO Auto-generated method stub
+                return null;
             }
         });
 
@@ -152,11 +162,19 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
         setPreferenceState(fluxCtrl);
         if (fluxCtrl) {
             Log.d(LOG_TAG, "switch turn on");
+            MobclickAgent.onEvent(this, Utils.UMENG_SWITCH_ON);
             startService(mFluxCtrlIntent);
         } else {
             Log.d(LOG_TAG, "switch turn off");
+            MobclickAgent.onEvent(this, Utils.UMENG_SWITCH_OFF);
             stopService(mFluxCtrlIntent);
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
     }
 
     @Override

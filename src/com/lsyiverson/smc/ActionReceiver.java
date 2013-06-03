@@ -9,6 +9,8 @@ import android.content.res.Resources;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.umeng.analytics.MobclickAgent;
+
 public class ActionReceiver extends BroadcastReceiver {
     private static final String LOG_TAG = "ActionRecevier";
 
@@ -21,10 +23,14 @@ public class ActionReceiver extends BroadcastReceiver {
         fluxCtrlIntent.addFlags(Utils.AUTOMATIC_FLAG);
 
         if (intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
-            if (sp.getBoolean(res.getString(R.string.key_auto_run), false)
-                    && sp.getBoolean(res.getString(R.string.key_mobile_data), false)) {
-                Log.d(LOG_TAG, "System boot completed, start FluxCtrlService");
-                context.startService(fluxCtrlIntent);
+            if (sp.getBoolean(res.getString(R.string.key_auto_run), false)) {
+                MobclickAgent.onEvent(context, Utils.UMENG_AUTO_RUN, "true");
+                if (sp.getBoolean(res.getString(R.string.key_mobile_data), false)) {
+                    Log.d(LOG_TAG, "System boot completed, start FluxCtrlService");
+                    context.startService(fluxCtrlIntent);
+                }
+            } else {
+                MobclickAgent.onEvent(context, Utils.UMENG_AUTO_RUN, "false");
             }
         } else if (intent.getAction().equals(Intent.ACTION_PACKAGE_REPLACED)) {
             String pkgName = intent.getData().getSchemeSpecificPart();
