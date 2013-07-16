@@ -18,23 +18,34 @@
           <theme>@style/AppTheme</theme>
         </config>
       </layout>
+      <layout url="file://$PROJECT_DIR$/res/layout/activity_switch.xml">
+        <config>
+          <device>Nexus 4</device>
+          <theme>@style/AppTheme</theme>
+        </config>
+      </layout>
     </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CUSTOM_FILTER" value="lisy" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb2b2746-0ced-490e-bd10-f000d1d18f67" name="Default" comment="" />
+    <list default="true" id="fb2b2746-0ced-490e-bd10-f000d1d18f67" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/anim/back_window_back.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/anim/back_window_forward.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/anim/push_right_in.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/anim/push_right_out.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lsyiverson/smc/AboutActivity.java" afterPath="$PROJECT_DIR$/src/com/lsyiverson/smc/AboutActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartMobileDataController.iml" afterPath="$PROJECT_DIR$/SmartMobileDataController.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/lsyiverson/smc/SwitchActivity.java" afterPath="$PROJECT_DIR$/src/com/lsyiverson/smc/SwitchActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/xml/settings.xml" afterPath="$PROJECT_DIR$/res/xml/settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="SmartMobileDataController.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="fb2b2746-0ced-490e-bd10-f000d1d18f67" time="1373873462527" ignored="false" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="fb2b2746-0ced-490e-bd10-f000d1d18f67" time="1373447658082" ignored="false" />
-    <file path="/fragment.java" changelist="fb2b2746-0ced-490e-bd10-f000d1d18f67" time="1373855504837" ignored="false" />
-    <file path="/SwitchActivity.java" changelist="fb2b2746-0ced-490e-bd10-f000d1d18f67" time="1373876639256" ignored="false" />
-    <file path="/a.dummy" changelist="fb2b2746-0ced-490e-bd10-f000d1d18f67" time="1373874591722" ignored="false" />
-    <file path="/settings.xml" changelist="fb2b2746-0ced-490e-bd10-f000d1d18f67" time="1373874912849" ignored="false" />
-    <file path="/strings.xml" changelist="fb2b2746-0ced-490e-bd10-f000d1d18f67" time="1373874898159" ignored="false" />
-    <file path="/AboutActivity.java" changelist="fb2b2746-0ced-490e-bd10-f000d1d18f67" time="1373877507422" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +53,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="USE_COMPILE_SERVER" value="false" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -95,31 +109,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SwitchActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="SwitchActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/SwitchActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="162" column="5" selection-start="5877" selection-end="5877" vertical-scroll-proportion="-0.5222552">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2339#2389#0" expanded="true" />
-                <element signature="e#2828#2875#0" expanded="true" />
-                <element signature="e#2877#2922#0" expanded="true" />
-                <element signature="e#4455#4505#0" expanded="true" />
-                <element signature="e#4609#4655#0" expanded="true" />
-                <element signature="e#4755#4802#0" expanded="true" />
-                <element signature="e#4900#4949#0" expanded="true" />
-                <element signature="e#6659#6709#0" expanded="true" />
-                <element signature="e#6934#6981#0" expanded="true" />
-                <element signature="e#7911#7958#0" expanded="true" />
-              </folding>
+            <state line="186" column="24" selection-start="6576" selection-end="6576" vertical-scroll-proportion="0.0" vertical-offset="2774" max-vertical-offset="4047">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AboutActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AboutActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/AboutActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="13" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.0">
+            <state line="59" column="32" selection-start="2199" selection-end="2199" vertical-scroll-proportion="0.26923078" vertical-offset="795" max-vertical-offset="1501">
               <folding>
                 <element signature="e#1299#1345#0" expanded="true" />
                 <element signature="e#1741#1791#0" expanded="true" />
@@ -129,23 +131,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="back_window_forward.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/anim/back_window_forward.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="settings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/xml/settings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="48" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0">
+            <state line="33" column="53" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="893">
               <folding>
+                <element signature="e#157#191#0" expanded="true" />
                 <element signature="e#244#269#0" expanded="true" />
+                <element signature="e#301#318#0" expanded="true" />
+                <element signature="e#349#365#0" expanded="true" />
+                <element signature="e#400#413#0" expanded="true" />
+                <element signature="e#447#459#0" expanded="true" />
+                <element signature="e#486#508#0" expanded="true" />
+                <element signature="e#614#635#0" expanded="true" />
+                <element signature="e#658#675#0" expanded="true" />
+                <element signature="e#771#793#0" expanded="true" />
+                <element signature="e#822#843#0" expanded="true" />
+                <element signature="e#870#894#0" expanded="true" />
+                <element signature="e#992#1018#0" expanded="true" />
                 <element signature="e#1170#1194#0" expanded="true" />
+                <element signature="e#1223#1242#0" expanded="true" />
+                <element signature="e#1269#1295#0" expanded="true" />
                 <element signature="e#1363#1378#0" expanded="true" />
+                <element signature="e#1415#1440#0" expanded="true" />
+                <element signature="e#1473#1492#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,7 +163,16 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="43" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
+            <state line="16" column="43" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="1045">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="push_right_in.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/anim/push_right_in.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
@@ -222,22 +240,13 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="SmartMobileDataController" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SmartMobileDataController" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SmartMobileDataController" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -256,28 +265,32 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GoToClass.includeJavaFiles" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Iverson\AndroidStudioProjects\SmartMobileDataController\res" />
       <recent name="C:\Users\Iverson\AndroidStudioProjects\SmartMobileDataController\res\anim" />
     </key>
   </component>
@@ -449,29 +462,30 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32801822" sideWeight="0.58219177" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.6712329" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32649574" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32761577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270548" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41609588" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25037935" sideWeight="0.6729452" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25037935" sideWeight="0.6729452" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3270548" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24962063" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270548" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -562,95 +576,120 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/AboutActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="45" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" />
+        <state line="17" column="45" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="51" selection-start="1490" selection-end="1499" vertical-scroll-proportion="0.0" />
+        <state line="54" column="51" selection-start="1490" selection-end="1499" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/AboutActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="45" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" />
+        <state line="17" column="45" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="51" selection-start="1490" selection-end="1499" vertical-scroll-proportion="0.0" />
+        <state line="54" column="51" selection-start="1490" selection-end="1499" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/AboutActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="45" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" />
+        <state line="17" column="45" selection-start="510" selection-end="510" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="51" selection-start="1490" selection-end="1499" vertical-scroll-proportion="0.0" />
+        <state line="54" column="51" selection-start="1490" selection-end="1499" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/lang/Object.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="43" selection-start="510" selection-end="510" vertical-scroll-proportion="0.33142856" />
+        <state line="15" column="43" selection-start="510" selection-end="510" vertical-scroll-proportion="0.33142856" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gen/com/lsyiverson/smc/Manifest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="176" selection-end="176" vertical-scroll-proportion="0.17625232" />
+        <state line="5" column="19" selection-start="176" selection-end="176" vertical-scroll-proportion="0.17625232" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="5" selection-start="1994" selection-end="1994" vertical-scroll-proportion="1.5992578" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_about.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="18" selection-start="392" selection-end="392" vertical-scroll-proportion="0.39658445" />
+        <state line="67" column="5" selection-start="1994" selection-end="1994" vertical-scroll-proportion="1.5992578" vertical-offset="0" max-vertical-offset="0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/activity_switch.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="33" selection-start="464" selection-end="464" vertical-scroll-proportion="0.39583334" vertical-offset="0" max-vertical-offset="532">
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-designer">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_about.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="249" selection-end="249" vertical-scroll-proportion="0.20683111">
+        <state line="12" column="38" selection-start="431" selection-end="431" vertical-scroll-proportion="0.4318182" vertical-offset="0" max-vertical-offset="893">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/anim/push_right_in.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="43" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
+        <state line="16" column="43" selection-start="643" selection-end="643" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="1045">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/xml/settings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="48" selection-start="1429" selection-end="1429" vertical-scroll-proportion="0.0">
+        <state line="33" column="53" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="893">
           <folding>
+            <element signature="e#157#191#0" expanded="true" />
             <element signature="e#244#269#0" expanded="true" />
+            <element signature="e#301#318#0" expanded="true" />
+            <element signature="e#349#365#0" expanded="true" />
+            <element signature="e#400#413#0" expanded="true" />
+            <element signature="e#447#459#0" expanded="true" />
+            <element signature="e#486#508#0" expanded="true" />
+            <element signature="e#614#635#0" expanded="true" />
+            <element signature="e#658#675#0" expanded="true" />
+            <element signature="e#771#793#0" expanded="true" />
+            <element signature="e#822#843#0" expanded="true" />
+            <element signature="e#870#894#0" expanded="true" />
+            <element signature="e#992#1018#0" expanded="true" />
             <element signature="e#1170#1194#0" expanded="true" />
+            <element signature="e#1223#1242#0" expanded="true" />
+            <element signature="e#1269#1295#0" expanded="true" />
             <element signature="e#1363#1378#0" expanded="true" />
+            <element signature="e#1415#1440#0" expanded="true" />
+            <element signature="e#1473#1492#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/anim/back_window_forward.xml">
+    <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/SwitchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="186" column="24" selection-start="6576" selection-end="6576" vertical-scroll-proportion="0.0" vertical-offset="2774" max-vertical-offset="4047">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/AboutActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="13" selection-start="1977" selection-end="1977" vertical-scroll-proportion="0.0">
+        <state line="59" column="32" selection-start="2199" selection-end="2199" vertical-scroll-proportion="0.26923078" vertical-offset="795" max-vertical-offset="1501">
           <folding>
             <element signature="e#1299#1345#0" expanded="true" />
             <element signature="e#1741#1791#0" expanded="true" />
@@ -659,25 +698,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/lsyiverson/smc/SwitchActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="162" column="5" selection-start="5877" selection-end="5877" vertical-scroll-proportion="-0.5222552">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2339#2389#0" expanded="true" />
-            <element signature="e#2828#2875#0" expanded="true" />
-            <element signature="e#2877#2922#0" expanded="true" />
-            <element signature="e#4455#4505#0" expanded="true" />
-            <element signature="e#4609#4655#0" expanded="true" />
-            <element signature="e#4755#4802#0" expanded="true" />
-            <element signature="e#4900#4949#0" expanded="true" />
-            <element signature="e#6659#6709#0" expanded="true" />
-            <element signature="e#6934#6981#0" expanded="true" />
-            <element signature="e#7911#7958#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Android</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>SmartMobileDataController</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>Android 4.2.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>libs</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 

@@ -51,6 +51,8 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
 
     private DomobAdView mAdView320x50;
 
+    protected boolean mIsQuit = false;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -172,7 +174,16 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
     }
 
     @Override
+    public void onBackPressed() {
+        mIsQuit = true;
+        super.onBackPressed();
+    }
+
+    @Override
     protected void onPause() {
+        if (!mIsQuit) {
+            overridePendingTransition(R.anim.push_right_in, R.anim.back_window_back);
+        }
         super.onPause();
         MobclickAgent.onPause(this);
     }
