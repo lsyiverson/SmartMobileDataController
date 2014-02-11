@@ -50,11 +50,10 @@ public class Utils {
      * @return If the mobile data enabled
      */
     private static boolean getMobileDataEnabled(ConnectivityManager cm) {
-        boolean mobileDataEnabled = true;
+        boolean mobileDataEnabled = false;
         try {
-            Method method = cm.getClass().getMethod("getMobileDataEnabled", null);
-            Object[] arg = null;
-            mobileDataEnabled = (Boolean)method.invoke(cm, arg);
+            Method method = cm.getClass().getMethod("getMobileDataEnabled");
+            mobileDataEnabled = (Boolean)method.invoke(cm);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (IllegalArgumentException e) {

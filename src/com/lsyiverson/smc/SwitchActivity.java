@@ -14,6 +14,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
@@ -41,6 +42,8 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
 
     private SwitchPreference mSwitchPreference;
 
+    private CheckBoxPreference mSwitchPreference_low;
+
     private PreferenceCategory mOptionsCategory;
 
     private CheckBoxPreference mAutoRunPref;
@@ -49,7 +52,7 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
 
     private RelativeLayout mAdContainer;
 
-    private DomobAdView mAdView320x50;
+    private DomobAdView mAdView;
 
     protected boolean mIsQuit = false;
 
@@ -82,9 +85,9 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
     private void setupAdView() {
         mAdContainer = (RelativeLayout)findViewById(R.id.ad_container);
 
-        mAdView320x50 = new DomobAdView(this, getResources().getString(R.string.publisher_id), getResources().getString(R.string.InlinePPID),
-                DomobAdView.INLINE_SIZE_320X50);
-        mAdView320x50.setAdEventListener(new DomobAdEventListener() {
+        mAdView = new DomobAdView(this, getResources().getString(R.string.publisher_id), getResources().getString(R.string.InlinePPID),
+                DomobAdView.INLINE_SIZE_FLEXIBLE);
+        mAdView.setAdEventListener(new DomobAdEventListener() {
 
             @Override
             public void onDomobAdReturned(DomobAdView arg0) {
@@ -125,13 +128,18 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
             }
         });
 
-        mAdContainer.addView(mAdView320x50);
+        mAdContainer.addView(mAdView);
     }
 
     private void init() {
         mSmartSettings.registerOnSharedPreferenceChangeListener(this);
-        mSwitchPreference = (SwitchPreference)getPreferenceScreen().findPreference(
-                getResources().getString(R.string.key_mobile_data));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            mSwitchPreference = (SwitchPreference)getPreferenceScreen().findPreference(
+                    getResources().getString(R.string.key_mobile_data));
+        } else {
+            mSwitchPreference_low = (CheckBoxPreference)getPreferenceScreen().findPreference(
+                    getResources().getString(R.string.key_mobile_data));
+        }
         mOptionsCategory = (PreferenceCategory)getPreferenceScreen().findPreference(
                 getResources().getString(R.string.key_options));
         mAutoRunPref = (CheckBoxPreference)getPreferenceScreen().findPreference(
@@ -195,6 +203,14 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
         super.onDestroy();
     }
 
+    private void setSwitchChecked(boolean checked) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            mSwitchPreference.setChecked(checked);
+        } else {
+            mSwitchPreference_low.setChecked(checked);
+        }
+    }
+
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (getResources().getString(R.string.key_mobile_data).equals(key)) {
@@ -224,18 +240,18 @@ public class SwitchActivity extends PreferenceActivity implements OnSharedPrefer
                 }).setNegativeButton(R.string.cancel, new OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        mSwitchPreference.setChecked(false);
+                        setSwitchChecked(false);
                     }
                 }).setOnCancelListener(new OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface arg0) {
-                        mSwitchPreference.setChecked(false);
+                        setSwitchChecked(false);
                     }
                 });
                 if (!SwitchActivity.this.isFinishing()) {
                     builder.create().show();
                 } else {
-                    mSwitchPreference.setChecked(false);
+                    setSwitchChecked(false);
                 }
             } else {
                 ctrlServiceByPreference(fluxCtrl);

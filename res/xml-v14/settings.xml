@@ -2,10 +2,12 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory android:title="@string/smart_mobile_data_switch" >
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="@string/key_mobile_data"
             android:summaryOff="@string/sum_off"
             android:summaryOn="@string/sum_on"
+            android:switchTextOff="@string/off"
+            android:switchTextOn="@string/on"
             android:title="@string/switch_title" />
     </PreferenceCategory>
     <PreferenceCategory
